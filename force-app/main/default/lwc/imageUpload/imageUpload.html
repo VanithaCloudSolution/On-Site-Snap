@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Upload Image" icon-name="action:new_custom76">
+        <div class="slds-m-around_medium">
+            <div>Upload  Image</div>
+            <input type="file" accept=".jpg,.jpeg,.png,.pdf" onchange={handleFilesChange}/>
+            <template if:true={isInProgress}>
+                <lightning-combobox
+                    name="progress"
+                    label="Progress"
+                    value={progressValue}
+                    options={progressOptions}
+                    onchange={handleProgressChange}>
+                </lightning-combobox>
+            </template>
+            <lightning-button label="Upload Image" onclick={uploadFile} class="slds-m-top_medium"></lightning-button>
+        </div>
+        
+    </lightning-card>
+</template>
